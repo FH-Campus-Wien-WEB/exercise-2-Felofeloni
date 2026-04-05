@@ -1,9 +1,5 @@
 @import url(base.css);
 
-  * {
-    font-family: Arial, sans-serif;
-  }
-
   body {
     background-color: rgb(255, 255, 255);
     margin: 0px;
@@ -27,16 +23,31 @@
   }
 
   article > div{
-    margin-left: 20px;
-    padding-bottom: 10px;
+    padding: 0 10px 0 20px;
     max-width: 100%;
     flex-grow: 1;
     overflow: auto;
   }
 
+  .article-header{
+    margin: 10px 0;
+  }
+
+  .article-header *{
+    margin: 2px;
+  }
+
+  .title-container :first-child {
+    flex-grow: 1;
+  }
+
+  .title-container {
+    display: flex;
+    margin: 0;
+  }
+
   article > div *{
     font-size: 1rem;
-    color: black;
   }
 
   article div h2{
@@ -57,12 +68,4 @@
     color: white;
     border-radius: 100px;
     font-size: 0.8rem;
-  }
-
-  .article-header{
-    margin: 10px 0;
-  }
-
-  .article-header *{
-    margin: 2px;
   }

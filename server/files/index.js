@@ -1,6 +1,7 @@
 function displayMovie(movie) {
     //Container
     const container = document.createElement("article")
+    container.id = movie.imdbID
 
     //Poster
     const poster = document.createElement("img")
@@ -9,44 +10,65 @@ function displayMovie(movie) {
 
     //Child-container
     const childContainer = document.createElement("div")
+    childContainer.classList.add("child-container");
+
+      //Article-header
+      const articleContainer = document.createElement("div")
+      articleContainer.classList.add("article-header");
 
         //Title-container
         const titleContainer = document.createElement("div")
-        titleContainer.classList.add("article-header");
+        titleContainer.classList.add("title-container");
 
             //Title
             const title = document.createElement("h2")
             title.textContent = movie.Title
             titleContainer.appendChild(title)
 
-            // Info (Released, Runtime, Rating)
-            const info = document.createElement("p")
-            info.textContent = `Released: ${movie.Released} | Runtime: ${movie.Runtime} min | IMDb: ${movie.imdbRating} | Metascore: ${movie.Metascore}`
-            titleContainer.appendChild(info)
+            //Side-Container
+            const sideContainer = document.createElement("div")
+            sideContainer.classList.add("article-side");
 
-        childContainer.appendChild(titleContainer)
+                //Edit Button
+                const edit = document.createElement("button")
+                edit.textContent = "Edit"
+                edit.addEventListener("click", () => {
+                editMovie(container.id)
+                });
+                sideContainer.appendChild(edit)
 
-        // Genres
-        const genres = generateTagsElement(movie.Genres)
-        childContainer.appendChild(genres)
+            titleContainer.appendChild(sideContainer)
 
-        // Plot
-        const plot = document.createElement("p")
-        plot.textContent = movie.Plot
-        childContainer.appendChild(plot)
+        articleContainer.appendChild(titleContainer)
 
-        //Directors
-        const directors = generateListElement("Directors", movie.Directors)
-        childContainer.appendChild(directors)
+        // Info (Released, Runtime, Rating)
+        const info = document.createElement("p")
+        info.textContent = `Released: ${movie.Released} | Runtime: ${movie.Runtime} min | IMDb: ${movie.imdbRating} | Metascore: ${movie.Metascore}`
+        articleContainer.appendChild(info)
 
-        //Writers
-        const writers = generateListElement("Writers", movie.Writers)
-        childContainer.appendChild(writers)
-        
-        //Actors
-        const actors = generateListElement("Actors", movie.Actors)
-        childContainer.appendChild(actors)
+      childContainer.appendChild(articleContainer)
 
+      // Genres
+      const genres = generateTagsElement(movie.Genres)
+      childContainer.appendChild(genres)
+
+      // Plot
+      const plot = document.createElement("p")
+      plot.textContent = movie.Plot
+      childContainer.appendChild(plot)
+
+      //Directors
+      const directors = generateListElement("Directors", movie.Directors)
+      childContainer.appendChild(directors)
+
+      //Writers
+      const writers = generateListElement("Writers", movie.Writers)
+      childContainer.appendChild(writers)
+      
+      //Actors
+      const actors = generateListElement("Actors", movie.Actors)
+      childContainer.appendChild(actors)
+    
     container.appendChild(childContainer)
 
     return container
@@ -82,6 +104,10 @@ function generateTagsElement(list){
     }
 
     return element
+}
+
+function editMovie(id){
+  alert("Edit: "+id)
 }
 
 window.onload = function () {

@@ -1,11 +1,13 @@
-body {
-  font-family: "Trebuchet MS", sans-serif;
+* {
+  font-family: Arial, sans-serif;
 }
 
 button {
-    padding: 0px 8px;
-    margin-right: 8px;
-    border-width: 1px;
+    padding: 4px 10px;
     border-radius: 4px;
+    border: 0;
     font-size: 110%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
 }
