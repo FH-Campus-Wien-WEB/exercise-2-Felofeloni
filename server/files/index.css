@@ -41,8 +41,6 @@
 
   img {
     max-height: 24vw;
-    width: auto;
-    height: auto;
     border-right: 5px solid red;
   }
 
