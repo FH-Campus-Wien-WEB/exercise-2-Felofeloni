@@ -33,7 +33,7 @@ function displayMovie(movie) {
                 const edit = document.createElement("button")
                 edit.textContent = "Edit"
                 edit.addEventListener("click", () => {
-                editMovie(container.id)
+                    editMovie(container.id)
                 });
                 sideContainer.appendChild(edit)
 
@@ -107,7 +107,7 @@ function generateTagsElement(list){
 }
 
 function editMovie(id){
-  alert("Edit: "+id)
+  location.href = 'edit.html?imdbID=' + id
 }
 
 window.onload = function () {

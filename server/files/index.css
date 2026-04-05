@@ -1,20 +1,5 @@
 @import url(base.css);
 
-  body {
-    background-color: rgb(255, 255, 255);
-    margin: 0px;
-  }
-
-  header{
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-  }
-
-  h1{
-    padding-left: 5px;
-  }
-
   article{
     display: flex;
     margin: 10px;
